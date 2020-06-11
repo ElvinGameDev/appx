@@ -51,3 +51,6 @@ after
     "name": YOUR_PROJECT_NAME,
     "slug": YOUR_PROJECT_SLUG",
 ```
+
+See expo documantation
+https://docs.expo.io/guides/
