@@ -1,19 +1,19 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { useTheme, themeContext } from "AppRoot/src/context/index";
+import Route from "AppRoot/src/route/Route";
+import store from "AppRoot/src/store/store";
+import React from "react";
+import { Provider } from "react-redux";
 
-export default function App() {
+const App = () => {
+  const theme = useTheme();
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-    </View>
+    <Provider store={store}>
+      <themeContext.Provider value={theme}>
+        <Route />
+      </themeContext.Provider>
+    </Provider>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
